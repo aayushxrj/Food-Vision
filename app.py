@@ -8,7 +8,7 @@ st.title("Food Vision 🍔📷")
 
 model = tf.keras.models.load_model("./FoodVisionFineTunedModel.hdf5")
 
-@st.cache(suppress_st_warning=True, allow_output_mutation=True)
+@st.cache
 def predicting(image, model):
     image = load_and_prep(image)
     image = tf.cast(tf.expand_dims(image, axis=0), tf.int16)
